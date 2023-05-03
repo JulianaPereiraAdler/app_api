@@ -13,8 +13,9 @@ Outra funcionalidade importante é a possibilidade de resumir os pareceres dos t
 Para executar a API, é necessário ter todas as bibliotecas Python listadas no requirements.txt instaladas. 
 Após clonar o repositório, abra o terminal e vá para o diretório raiz. 
 
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenpython -m venv .v.pypa.io/en/latest/).
-> No Ambiente Windows foi utilizado o comando (python -m venv venv) para a criação do ambiente virtual e o comando (venv\Scripts\activate) para ativar o ambiente virtual.
+> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/).
+> Primeiramente, é necessário instalar o virtualenv através do comendo pip install virtualenv.
+> No Ambiente Windows pode ser utilizado o comando (python -m venv venv) para a criação do ambiente virtual e o comando (venv\Scripts\activate) para ativar o ambiente virtual.
 
  ```
 (venv)$ pip install -r requirements.txt
@@ -41,7 +42,7 @@ Toda a documentação pode ser encontrada no [Swagger](http://localhost:5000/swa
 
 
 ## Banco de dados
-Caso o arquivo do banco de dados não esteja disponviel no repositório, crie as tabelas abaixo:
+Caso o arquivo do banco de dados não esteja disponível no repositório, crie as tabelas abaixo:
 
 ```
 CREATE TABLE termos_compromisso (
@@ -123,4 +124,4 @@ CREATE TABLE relacionamento_atividades_termos (
 );
 ```
 
-Salve um arquivo chamado db.sqlite3 e salve dentro da pasta database.
+Nomeia o arquivo "db.sqlite3" e salve dentro da pasta database.
