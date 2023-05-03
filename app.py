@@ -240,4 +240,3 @@ def resumir_texto_chatgpt(form: ResumoChatGPTSchema):
     termo_resumo = TermoCompromisso(form.id_termo).update_resumo_termo(resumo)
     
     return jsonify(resumo)
-
