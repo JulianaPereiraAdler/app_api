@@ -34,6 +34,8 @@ def function_scraping_cvm():
         if len(lista_termos) > 0:
             lista_termos.pop(0)
             print("Quantidade de resultados:", len(lista_termos))
+
+            erro_parte_1 = 0
             
             for i in lista_termos:
                 
@@ -65,8 +67,12 @@ def function_scraping_cvm():
                     lista_todos_termos.append((num_processo,link_processo,data_aprovacao,data_assinatura,data_publicacao,compromitentes,link_decisao,data_arquivamento))       
             
                 except:
-                    mensagem = mensagem +", " + str(i.contents[1].text)
+                    if erro_parte_1 == 0:
+                        mensagem = str(i.contents[1].text)
+                    else:
+                        mensagem = mensagem +", " + str(i.contents[1].text)
                     lista_erros.append(i.contents[1].text)
+                    erro_parte_1 = erro_parte_1 + 1
             
             n_pag = n_pag + 1
 
@@ -81,7 +87,7 @@ def function_scraping_cvm():
 
     ######## APENAS PARA TESTE ########
     #-----------------------------------
-    df_termos = df_termos.head(20)
+    df_termos = df_termos.head(25)
 
     #monta lista com termos já cadastrados
     query = text("""SELECT numero_processo FROM termos_compromisso WHERE 1""")
